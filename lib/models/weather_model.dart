@@ -1,6 +1,7 @@
 class WeatherModel {
   final String city;
   final double temperature;
+  final double feelsLike;
   final String description;
   final int humidity;
   final double windSpeed;
@@ -9,6 +10,7 @@ class WeatherModel {
   WeatherModel({
     required this.city,
     required this.temperature,
+    required this.feelsLike,
     required this.description,
     required this.humidity,
     required this.windSpeed,
@@ -17,11 +19,12 @@ class WeatherModel {
 
   factory WeatherModel.fromJson(Map<String, dynamic> json) {
     return WeatherModel(
-      city: json["location"]["name"],
-      temperature: json["current"]["temp_c"].toDouble(),
-      description: json["current"]["condition"]["text"],
-      humidity: json["current"]["humidity"],
-      windSpeed: json["current"]["wind_kph"].toDouble(),
+      city: json["location"]["name"] as String,
+      temperature: (json["current"]["temp_c"] as num).toDouble(),
+      feelsLike: (json["current"]["feelslike_c"] as num).toDouble(),
+      description: json["current"]["condition"]["text"] as String,
+      humidity: json["current"]["humidity"] as int,
+      windSpeed: (json["current"]["wind_kph"] as num).toDouble(),
       icon: "https:${json["current"]["condition"]["icon"]}",
     );
   }

@@ -1,0 +1,90 @@
+{
+  "project_info": {
+    "project_number": "258166032202",
+    "project_id": "agri-guide-ai",
+    "storage_bucket": "agri-guide-ai.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:258166032202:android:7271720cd557afdca463b3",
+        "android_client_info": {
+          "package_name": "com.example.agriguide_ai"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "258166032202-rj9i0i8gp857m9mh078sfoaeok6f21uo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAr5j90s3LK42zrIJzsyrfAix1PVCArbDg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "258166032202-rj9i0i8gp857m9mh078sfoaeok6f21uo.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "258166032202-3dr6v21vs362rlbh8mj8ujloskthq4ol.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.smartFarmerAssistant"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:258166032202:android:538960336cc886e4a463b3",
+        "android_client_info": {
+          "package_name": "com.example.smart_farmer_assistant"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "258166032202-ghbcf2psj67vugp2poeb61n1pfqf5358.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.smart_farmer_assistant",
+            "certificate_hash": "ec4ab0c71d9e540fec6357ae299d0d696bfc0063"
+          }
+        },
+        {
+          "client_id": "258166032202-rj9i0i8gp857m9mh078sfoaeok6f21uo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAr5j90s3LK42zrIJzsyrfAix1PVCArbDg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "258166032202-rj9i0i8gp857m9mh078sfoaeok6f21uo.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "258166032202-3dr6v21vs362rlbh8mj8ujloskthq4ol.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.smartFarmerAssistant"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
