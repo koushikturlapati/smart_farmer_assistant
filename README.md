@@ -24,15 +24,12 @@ An assistant app to help small and medium-scale farmers make data-driven decisio
 
 ## Getting started (quick)
 
-1. Install Flutter SDK: https://docs.flutter.dev/get-started/install
-2. Clone the repo and install dependencies:
 
-   flutter pub get
-
-3. Run the app on a connected device or emulator:
-
-   flutter run
-
+# install Flutter SDK per https://docs.flutter.dev/get-started/install
+git clone https://github.com/koushikturlapati/smart_farmer_assistant.git
+cd smart_farmer_assistant
+flutter pub get
+flutter run    # runs on connected device/emulator (choose target)
 ## Contributing
 
 Contributions, bug reports, and feature requests are welcome. Please open an issue or submit a pull request with a clear description of the change.
