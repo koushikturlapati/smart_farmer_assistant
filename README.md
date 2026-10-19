@@ -40,4 +40,4 @@ Maintainer: koushikturlapati
 
 ---
 
-(Note: this resolves the merge conflict in README.md and adds the project highlights.)
+
