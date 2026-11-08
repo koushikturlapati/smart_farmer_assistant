@@ -1,43 +1,112 @@
-# smart_farmer_assistant
+# Smart Farmer Assistant
 
-An assistant app to help small and medium-scale farmers make data-driven decisions using mobile-first tools and on-device intelligence.
+A Flutter-based mobile application prototype that brings together location-based weather information and an agriculture-focused chatbot in a farmer-oriented interface.
 
-## Project highlights
+## Current Features
 
-- Purpose: Provide actionable, easy-to-understand guidance for farmers to increase yield, reduce input costs, and manage risk.
-- Cross-platform mobile app built with Flutter for Android and iOS.
-- Crop recommendation engine: suggests best crops and planting windows based on soil, location, and season.
-- Pest & disease detection: on-device image classification (TensorFlow Lite) to identify common pests and diseases from plant photos.
-- Weather forecasts & alerts: localized weather data and push notifications for frost, heavy rain, or heat events.
-- Irrigation & fertilizer scheduling: recommendations based on crop, soil moisture (if available), and weather forecast.
-- Market price tracking: fetches local market prices to help farmers decide when and where to sell.
-- Farm management tools: record-keeping for fields, tasks, inputs, and harvests.
-- Offline-first design: core features work without continuous connectivity; data syncs when online.
-- Multilingual support and simple UI aimed at non-technical users.
+- **Firebase authentication:** Google Sign-In through Firebase Authentication.
+- **User profile storage:** Saves basic signed-in user details in Cloud Firestore.
+- **Location-based weather:** Requests the device's current location and retrieves current weather conditions from WeatherAPI.
+- **Agriculture chatbot interface:** Lets users submit farming-related questions through a chat UI. The service code is configured to call Groq's chat-completions API using the Llama 3.3 70B Versatile model.
+- **Crop image selection:** Lets users capture a crop image using the camera or choose one from the gallery.
+- **Farmer-oriented interface:** Dashboard and selected interface labels support English and Telugu.
 
-## Tech stack
+## Important Scope Notes
 
-- Frontend: Flutter (Dart)
-- On-device ML: TensorFlow Lite
-- Backend / Services: Firebase (Auth, Firestore, Storage) or REST APIs for market/weather data
-- Optional: Cloud functions for heavy processing, third-party APIs for weather and market prices
+This repository is a prototype, not a complete precision-agriculture platform.
 
-## Getting started (quick)
+- The Crop Doctor currently supports image selection and navigation to an analysis screen; it does **not** currently run a trained disease-classification model. Disease predictions and confidence scores should not be treated as available functionality.
+- Soil Analysis, Crop Recommendation, Market Prices, Farm Diary, Government Schemes, and the separate Weather dashboard cards are currently placeholders and are not implemented workflows.
+- The weather integration retrieves current conditions; forecast alerts and notifications are not implemented.
+- The chatbot requires a valid Groq API key. The current source contains a placeholder value, so the chatbot will not work against Groq until configuration is corrected.
+- Automated testing is currently limited to a basic app-load widget test.
 
+## Tech Stack
 
-# install Flutter SDK per https://docs.flutter.dev/get-started/install
-git clone https://github.com/koushikturlapati/smart_farmer_assistant.git
-cd smart_farmer_assistant
-flutter pub get
-flutter run    # runs on connected device/emulator (choose target)
-## Contributing
+- **Language:** Dart
+- **UI framework:** Flutter
+- **Authentication:** Firebase Authentication with Google Sign-In
+- **User data:** Cloud Firestore
+- **Location:** Geolocator
+- **Weather:** WeatherAPI
+- **Chatbot API:** Groq API (Llama 3.3 70B Versatile)
+- **Image input:** image_picker
+- **Networking:** http
 
-Contributions, bug reports, and feature requests are welcome. Please open an issue or submit a pull request with a clear description of the change.
+## Project Structure
 
-## Contact
+```text
+lib/
+  app.dart
+  main.dart
+  core/
+  models/
+  screens/
+    auth/
+    chatbot/
+    crop_doctor/
+    home/
+    language/
+    onboarding/
+    splash/
+  services/
+  widgets/
+assets/
+  images/
+test/
+```
 
-Maintainer: koushikturlapati
+## Run Locally
 
----
+### Prerequisites
 
+- Flutter SDK compatible with the Dart SDK constraint in `pubspec.yaml`
+- Android Studio or VS Code with Flutter tooling
+- A configured Firebase project with the required Android/iOS app registrations
+- A valid WeatherAPI key
+- A valid Groq API key for chatbot requests
 
+### Setup
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/koushikturlapati/smart_farmer_assistant.git
+   cd smart_farmer_assistant
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   flutter pub get
+   ```
+
+3. Configure Firebase for your target platform and provide the generated platform configuration required by FlutterFire.
+
+4. Configure API credentials securely before running the app. Do not commit API keys or other secrets to source control. The current source includes a hardcoded WeatherAPI credential and a placeholder Groq credential; rotate the exposed WeatherAPI credential and replace the current credential handling before using or publishing this project.
+
+5. Run the application:
+
+   ```bash
+   flutter run
+   ```
+
+## Run Tests
+
+Run the available Flutter tests with:
+
+```bash
+flutter test
+```
+
+Run static analysis with:
+
+```bash
+flutter analyze
+```
+
+The presence of these commands in this README does not imply that a comprehensive test suite or CI pipeline is already in place.
+
+## Repository
+
+[GitHub: koushikturlapati/smart_farmer_assistant](https://github.com/koushikturlapati/smart_farmer_assistant)
